@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Identification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='identify.css') }}">
+    <link rel="stylesheet" href="C:\Users\abhin\OneDrive\Desktop\demo\static\identify.css">
+
+</head>
+<body>
+    
+    <header>
+        <img src="{{ url_for('static', filename='image/BORCELLE-removebg-preview.png') }}" alt="Example Image">
+
+        <!-- <h2 class="logo">Leaf</h2> -->
+        <nav class="navigation">
+            <a href="{{ url_for('index1') }}">Home</a>
+            <a href="{{ url_for('identify') }}">Identify</a>
+            <a href="#">Library</a>
+            <button>Get APP</button>
+        </nav>
+
+    </header>
+
+    </section>
+    <div class="floating-button">
+        <a href="{{ url_for('identify') }}" ><img src="{{ url_for('static', filename='image/logo5april-removebg.png') }}" alt="Button Icon"></a>
+    </div>
+    </section>
+
+
+
+    <section class="upload">
+        <h1>Diagnose Your Plant!</h1>
+        <div class="uploadndisplay">
+            <div id="image-container">
+                <img id="selected-image" alt="">
+            </div>
+            <div class="leftupload">
+                <form action="{{ url_for('index') }}" method="POST" enctype="multipart/form-data">
+                    <label for="image" class="upload_box">
+                        Upload Image
+                        <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" onchange="previewImage(this)">
+                    </label>
+                    <select name="plant_type" class="plantselect">
+                        <option value="">Select plant type</option>
+                        <option value="apple">Apple &#x1F34E;</option>
+                        <option value="bell pepper">Bell Pepper &#127798;</option>
+                        <option value="corn">Corn &#127805;</option>
+                        <option value="cherry">Cherry &#127826;</option>
+                        <option value="peach">Peach &#127825;</option>
+                        <option value="potato">Potato &#129364;</option>
+                        <option value="strawberry">Strawberry &#127827;</option>
+                        <option value="tomato">Tomato &#127813</option>
+                        <option value="guava">Guava &#127813</option>
+                    </select>
+                    <input type="submit" value="Upload and Analyze" class="uploadbtn">
+                </form>
+            </div>   
+        </div>
+
+    </section>
+
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+        <p>&copy; 2024 Plant Leaf Disease Website. All rights reserved.</p>
+        <nav>
+            <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        </div>
+    </footer>  
+
+    <script>
+        function previewImage(input) {
+            const imageContainer = document.getElementById('image-container');
+            const selectedImage = document.getElementById('selected-image');
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    selectedImage.src = e.target.result;
+                    selectedImage.style.display = 'block'; // Display the selected image
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                // No file selected, hide the selected image
+                selectedImage.style.display = 'none';
+                selectedImage.src = ''; // Clear any previous image
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+        const uploadedImageDiv = document.getElementById('uploaded-image');
+        const uploadedImageUrl = "{{ uploaded_image_url }}";
+
+        if (uploadedImageUrl) {
+            uploadedImageDiv.style.display = 'block';
+        } else {
+            uploadedImageDiv.style.display = 'none';
+        }
+    });
+
+    </script>
+</body>
+</html>

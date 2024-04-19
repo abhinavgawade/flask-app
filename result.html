@@ -1,0 +1,80 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Disease Prediction Result</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+        <link rel="stylesheet" href="C:\Users\abhin\OneDrive\Desktop\demo\static\result.css">
+
+    </head>
+    <body>
+
+        <header>
+            <img src="{{ url_for('static', filename='image/BORCELLE-removebg-preview.png') }}" alt="Example Image">
+    
+            <!-- <h2 class="logo">Leaf</h2> -->
+            <nav class="navigation">
+                <a href="{{ url_for('index1') }}">Home</a>
+                <a href="{{ url_for('identify') }}">Identify</a>
+                <a href="#">Library</a>
+                <button>Get APP</button>
+            </nav>
+    
+        </header>
+        
+
+        </section>
+        <div class="floating-button">
+            <a href="{{ url_for('identify') }}" ><img src="{{ url_for('static', filename='image/logo5april-removebg.png') }}" alt="Button Icon"></a>
+        </div>
+        </section>
+
+        <section class="result">
+                <div class="result-container">
+                    <h1>Leaf Condition Report:</h1>
+                    <h2><strong>Condition:</strong> {{ result }}</h2>
+                    
+                    {% if result !=  'Healthy' %}
+                    <div class="disease-info" id="result">
+                        <p class="precautions">Precautions: {{ disease_info.precautions }}</p>
+                        <p class="treatment">Treatment: {{ disease_info.treatment }}</p>
+                        <p class="info">Solution: Get the necessary medicine <a href="{{ disease_info.solution }}" target="_blank" class="buy-button">BUY NOW</a></p>
+                    </div>
+                    {% else %}
+                    <p>Plant is healthy.</p>
+                    {% endif %}
+            
+    
+    
+                    <div>
+                        <div class="back-link">
+                          <a href="{{ url_for('identify') }}" ><button class="back-to-home" > Back to Home</button></a>
+                        </div>
+                    </div>
+    
+                    
+                </div>
+    
+    
+        </section>
+    
+        
+        <footer class="site-footer">
+            <div class="footer-content">
+            <p>&copy; 2024 Plant Leaf Disease Website. All rights reserved.</p>
+            <nav>
+                <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            </div>
+        </footer>  
+    
+    
+    
+    
+    
+</body>
+</html>

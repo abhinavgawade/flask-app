@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\abhin\OneDrive\Desktop\demo\static\style.css">
+</head>
+<body>
+    
+    <header>
+        <img src="{{ url_for('static', filename='image/BORCELLE-removebg-preview.png') }}" alt="Example Image">
+
+        <!-- <h2 class="logo">Leaf</h2> -->
+        <nav class="navigation">
+            <a href="{{ url_for('index1') }}">Home</a>
+            <a href="{{ url_for('identify') }}">Identify</a>
+            <a href="#">Library</a>
+            <button>Get APP</button>
+        </nav>
+
+    </header>
+ <!-- <img class="b" src="C:\Users\abhin\OneDrive\Desktop\normal\image\dark_leaf-removebg-preview.png">
+ <img class="a" src="C:\Users\abhin\OneDrive\Desktop\normal\image\branch.png">-->
+ 
+<main>
+
+    <section class="home" id="home">
+        <div class="home-text">
+            <h2>
+                Discover plant health with ease! 
+            </h2>
+            <p><br>
+                "Our platform offers rapid disease diagnosis from leaf images.<br>
+                Just upload, identify, and protect your plants with confidence."
+            </p>
+        </div>
+
+        <div class="home-img">
+            <img  src="{{ url_for('static', filename='image/homei.png') }}">
+            <img  src="{{ url_for('static', filename='image/display.png') }}">
+        </div>
+
+    </section>
+ 
+
+ <section class="how-we-work">
+     <h1>How We Work</h1>
+     <div class="container">
+         <div class="step">
+             <img src="{{ url_for('static', filename='image/qmark.png') }}" alt="Step 1">
+             <h3>Don't know how to get started?</h3>
+             <p>Here's a simple way to save your plant. Click on the Identify button.</p>
+         </div>
+         <div class="step">
+             <img src="{{ url_for('static', filename='image/diseasedimg.jpeg') }}"  alt="Step 2">
+             <h3>Take a picture</h3>
+             <p>Take a picture of your plant. Make sure it is clearly visible!</p>
+         </div>
+         <div class="step">
+             <img src="{{ url_for('static', filename='image/howupload.jpg') }}"alt="Step 3">
+             <h3>Upload</h3>
+             <p>Upload the picture on our website and click Identify.</p>
+         </div>
+         <div class="step">
+             <img src="{{ url_for('static', filename='image/howworksmed.png') }}"alt="Step 4">
+             <h3>There you go!</h3>
+             <p>And here it is, get a medicine for your plant with required details, its cost, ingredients, etc.</p>
+         </div>
+     </div>
+ </section>
+    </section>
+    <div class="floating-button">
+        <a href="{{ url_for('identify') }}" ><img src="{{ url_for('static', filename='image/logo5april-removebg.png') }}" alt="Button Icon"></a>
+    </div>
+    </section>
+
+ <section class="leaf-gallery">
+     <h2>Identify More Than 25+ Diseases!</h2>
+     <div class="gallery">
+
+     <img src="{{ url_for('static', filename='image/library image 1.jpg') }}"alt="Leaf 1">
+     <img src="{{ url_for('static', filename='image/library image 2.jpg') }}"alt="Leaf 2">
+     <img src="{{ url_for('static', filename='image/library image 3.jpg') }}"alt="Leaf 3">
+     <img src="{{ url_for('static', filename='image/library image 4.jpg') }}"alt="Leaf 4">
+     <img src="{{ url_for('static', filename='image/library image 5.jpg') }}"alt="Leaf 5">
+     <img src="{{ url_for('static', filename='image/library image 6.jpg') }}"alt="Leaf 6">
+     <img src="{{ url_for('static', filename='image/library image 7.jpg') }}"alt="Leaf 7">
+     <img src="{{ url_for('static', filename='image/library image 8.jpg') }}"alt="Leaf 8">
+     <img src="{{ url_for('static', filename='image/library image 9.jpg') }}"alt="Leaf 9">
+     <img src="{{ url_for('static', filename='image/library image 10.jpg') }}"alt="Leaf 10">
+     <img src="{{ url_for('static', filename='image/library image 11.jpg') }}"alt="Leaf 11">
+     <img src="{{ url_for('static', filename='image/library image 12.jpg') }}"alt="Leaf 12">
+
+     </div>
+ </section>
+
+
+ <section class="contact-section">
+     <div class="contact-form">
+       <h2>Contact Us</h2>
+       <form>
+         <div class="form-group">
+           <label for="name">Name:</label>
+           <input type="text" id="name" name="name">
+         </div>
+         <div class="form-group">
+           <label for="email">Email:</label>
+           <input type="email" id="email" name="email">
+         </div>
+         <div class="form-group">
+           <label for="message">Message:</label>
+           <textarea id="message" name="message"></textarea>
+         </div>
+         <button class="contact" type="submit">Submit</button>
+       </form>
+     </div>
+   </section>
+ 
+ 
+     <footer class="site-footer">
+         <div class="footer-content">
+         <p>&copy; 2024 Plant Leaf Disease Website. All rights reserved.</p>
+         <nav>
+             <ul>
+             <li><a href="#">Privacy Policy</a></li>
+             <li><a href="#">Terms of Service</a></li>
+             <li><a href="#">Contact</a></li>
+             </ul>
+         </nav>
+         </div>
+     </footer>  
+
+</main>
+
+
+
+</body>
+</html>
